@@ -1,6 +1,6 @@
 # *.jupyterlab-workspace
-jupyter/config/lab/workspaces/*
-!jupyter/config/lab/workspaces/.gitkeep
+jupyter/nbconfig/lab/workspaces/*
+!jupyter/nbconfig/lab/workspaces/.gitkeep
 
 jupyter/data/*
 !jupyter/data/.gitkeep

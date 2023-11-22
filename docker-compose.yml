@@ -136,8 +136,9 @@ services:
       - "18888:8888"
       - "4040:4040"
     volumes:
-      - notebook:/home/jupyter/notebook
       - nbconfig:/home/jupyter/.jupyter
+      - iconfig:/home/jupyter/.ipython
+      - notebook:/home/jupyter/notebook
       - nbdata:/home/jupyter/data
     restart: always
     networks:
@@ -193,7 +194,13 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: ./jupyter/config
+      device: ./jupyter/nbconfig
+  iconfig:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ./jupyter/iconfig
   nbdata:
     driver: local
     driver_opts:
