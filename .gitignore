@@ -5,8 +5,13 @@ jupyter/nbconfig/lab/workspaces/*
 jupyter/data/*
 !jupyter/data/.gitkeep
 
+# IPython
+jupyter/iconfig/profile_default/*
+!jupyter/iconfig/profile_default/ipython_config.py
+
 jdbc/
 
+# tempfile
 .bash_history
 volumes/
 
@@ -89,10 +94,6 @@ target/
 
 # Jupyter Notebook
 .ipynb_checkpoints
-
-# IPython
-profile_default/
-ipython_config.py
 
 # pyenv
 #   For a library or package, you might want to ignore these files since the code is
