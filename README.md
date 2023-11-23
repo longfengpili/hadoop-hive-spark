@@ -107,4 +107,11 @@ docker-compose up -d
 3. 如果您的宿主机上已经有服务占用了这些端口，您可能需要调整映射到宿主机的端口号以避免冲突。
 4. hvie jdbc jar包可以从安装目录中拷贝出来， 容器地址：/opt/hive/jdbc  
     `docker-compose cp master:/opt/hive/jdbc ./`
+5. 执行pyspark的时候会报错
++ 原因：未在python环境中安装对应的库，例如`pyarrow`
++ 解决办法：
+    * 先查看环境变量中`PYTHONPATH `
+    * 在对应的路径中应该有需要的库, 如果没有尝试安装，看是否安装到对应的目录中
+    * 使用`sudo pip install pyarrow`
+
 
