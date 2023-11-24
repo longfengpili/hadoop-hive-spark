@@ -65,6 +65,7 @@ docker-compose up -d
 
 ### `master`端口
 + **8080**: 【Spark】Spark Master 的 Web UI 端口。这个界面提供了关于 Spark 集群状态的信息，如当前的作业、可用的执行器等。
++ **7077**: 【Spark】用于 Spark 集群模式下的 Spark Master 与 Spark Worker 之间的通信。当您在集群模式下启动 Spark 集群时，Worker 节点会使用此端口连接到 Master 节点。简而言之，这个端口是 Spark 集群的主要通信端口，用于节点注册和资源管理。
 + **8088**: 【Hadoop】YARN 资源管理器的 Web UI 端口。如果您的 Hadoop 配置使用 YARN 作为资源管理器，这个界面会提供有关集群资源使用情况的信息。
 + **9870**: 【Hadoop】HDFS NameNode 的 Web UI 端口。这个界面提供了关于 HDFS 状态的信息，如文件系统的健康状况、存储使用情况等。
 + **8020**: 【Hadoop】Hadoop NameNode IPC 端口。这是 Hadoop 文件系统的客户端与 NameNode 通信的端口。
