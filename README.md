@@ -114,5 +114,11 @@ docker-compose up -d
     * 先查看环境变量中`PYTHONPATH `
     * 在对应的路径中应该有需要的库, 如果没有尝试安装，看是否安装到对应的目录中
     * 使用`sudo pip install pyarrow`
-
+6. 在jupyter中使用spark把数据写入本地
+    * 使用下面的命令
+    ```python
+    df.write.csv('file:///home/jupyter/data/foo.csv', header=True, mode='overwrite')
+    df.coalesce(1).write.csv('file:///home/jupyter/data/foo.csv', header=True, mode='overwrite')
+    ```
+    * 文件保存在worker的对应目录中
 

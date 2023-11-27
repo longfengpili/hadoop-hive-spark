@@ -37,7 +37,7 @@ services:
       - "10000:10000"
     volumes:
       - namenode:/opt/hadoop/dfs/name
-      # - mhome:/home/jupyter
+      - mhome:/home/jupyter
     restart: always
     networks:
       sparknet:
@@ -63,7 +63,7 @@ services:
       - "19864:9864"
     volumes:
       - datanode1:/opt/hadoop/dfs/data
-      # - w1home:/home/jupyter
+      - w1home:/home/jupyter
     restart: always
     networks:
       sparknet:
@@ -89,7 +89,7 @@ services:
       - "29864:9864"
     volumes:
       - datanode2:/opt/hadoop/dfs/data
-      # - w2home:/home/jupyter
+      - w2home:/home/jupyter
     restart: always
     networks:
       sparknet:
@@ -173,12 +173,12 @@ volumes:
       type: none
       o: bind
       device: ./volumes/hadoop/dfs/name
-  # mhome:
-  #   driver: local
-  #   driver_opts:
-  #     type: none
-  #     o: bind
-  #     device: ./volumes/homes/mhome
+  mhome:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ./volumes/homes/mhome
   namesecondary:
   datanode1:
     driver: local
@@ -186,24 +186,24 @@ volumes:
       type: none
       o: bind
       device: ./volumes/hadoop/dfs/data1
-  # w1home:
-  #   driver: local
-  #   driver_opts:
-  #     type: none
-  #     o: bind
-  #     device: ./volumes/homes/w1home
+  w1home:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ./volumes/homes/w1home
   datanode2:
     driver: local
     driver_opts:
       type: none
       o: bind
       device: ./volumes/hadoop/dfs/data2
-  # w2home:
-  #   driver: local
-  #   driver_opts:
-  #     type: none
-  #     o: bind
-  #     device: ./volumes/homes/w2home
+  w2home:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ./volumes/homes/w2home
   notebook:
     driver: local
     driver_opts:
