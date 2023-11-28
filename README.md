@@ -121,4 +121,11 @@ docker-compose up -d
     df.coalesce(1).write.csv('file:///home/jupyter/data/foo.csv', header=True, mode='overwrite')
     ```
     * 文件保存在worker的对应目录中
+7. 使用pyspark加载文件的时候，必须要保证所有的worker都能访问文件
+    * 建立的volume(mydata)用于连接所有worker
+    * 不必须连接master
+    * 使用下面的命令
+    ```python
+    adj = spark.read.text('file:///home/jupyter/data/adj_rs1.txt')
+    ```
 
