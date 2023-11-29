@@ -114,6 +114,8 @@ services:
     ports:
       - "18080:18080"
       - "19888:19888"
+    # volumes:
+    #   - mydata:/home/jupyter/data
     restart: always
     networks:
       sparknet:
