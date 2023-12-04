@@ -147,6 +147,7 @@ services:
       - iconfig:/home/jupyter/.ipython
       - notebook:/home/jupyter/notebook
       - mydata:/home/jupyter/data
+      - outputdata:/home/jupyter/outputdata
     restart: always
     networks:
       sparknet:
