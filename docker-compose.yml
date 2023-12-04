@@ -220,7 +220,7 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: ./volumes/workers/outputdata
+      device: ./volumes/outputdata
 
 networks:
   sparknet:
