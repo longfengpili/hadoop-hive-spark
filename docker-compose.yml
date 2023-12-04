@@ -37,7 +37,7 @@ services:
       - "10000:10000"
     volumes:
       - namenode:/opt/hadoop/dfs/name
-      - mydata:/home/jupyter/data
+      # - mydata:/home/jupyter/data
     restart: always
     networks:
       sparknet:
@@ -64,6 +64,7 @@ services:
     volumes:
       - datanode1:/opt/hadoop/dfs/data
       - mydata:/home/jupyter/data
+      - outputdata:/home/jupyter/outputdata
     restart: always
     networks:
       sparknet:
@@ -90,6 +91,7 @@ services:
     volumes:
       - datanode2:/opt/hadoop/dfs/data
       - mydata:/home/jupyter/data
+      - outputdata:/home/jupyter/outputdata
     restart: always
     networks:
       sparknet:
@@ -212,6 +214,12 @@ volumes:
       type: none
       o: bind
       device: ./jupyter/data
+  outputdata:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ./volumes/workers/outputdata
 
 networks:
   sparknet:
