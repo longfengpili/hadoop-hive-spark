@@ -26,4 +26,9 @@
         <name>yarn.nodemanager.aux-services</name>
         <value>mapreduce_shuffle</value>
     </property>
+    <property>
+        <name>yarn.scheduler.capacity.root.default.maximum-am-resource-percent</name>
+        <value>20</value>
+        <!-- <但请注意，设置过高的 AM 资源比例可能会导致其他应用程序资源不足。通常这个值会设置得较低，比如 0.1（10%）或更低> -->
+    </property>
 </configuration>
